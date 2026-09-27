@@ -201,6 +201,14 @@ the video, clean and legible logo typography, no other text, no subtitles""",
 7. 보고서 구성
 개요(목차, 핵심 메시지, 리스크)를 가장 먼저 넣고, 그 뒤에 본문을 구성해줘.""",
     },
+    {
+        "id": 4,
+        "title": "라면 먹방 라이브 방송 영상/이미지 생성",
+        "category": "영상/이미지 생성",
+        "tags": ["먹방", "라면", "영상", "이미지"],
+        "favorite": False,
+        "content": """A high-quality video of a young adult South Korean male in his early 20s with short buzzed hair and sun-kissed skin, wearing a dark navy casual outfit. He is in his cozy bedroom with a wooden bookshelf in the background. He is performing a "Mukbang" (eating show) live stream. In front of him, there is a professional ring light and a camera setup on a desk. He holds chopsticks, lifting a large portion of steaming hot, curly ramen noodles from a white bowl to his open mouth, looking excited and happy. The camera slightly zooms in on his face and the noodles. Soft indoor lighting, illustrative/animated style, natural movements.""",
+    },
 ]
 
 print(f"등록된 프롬프트: {len(prompts)}개")
