@@ -69,3 +69,56 @@ python3 prompt_manager_v2.py
 
 - 본 프로그램의 데이터는 Python 내부 메모리(`list` & `dict`)에 저장되어 실행됩니다.
 - ⚠️ **주의**: 프로그램 종료 시 추가 및 변경된 데이터는 저장되지 않으며, 재실행 시 기본 등록 데이터로 초기화됩니다.
+<details>
+## 실행 화면
+
+<details>
+<summary>개발 환경 확인</summary>
+
+**Python 버전, Git 버전, 기본 브랜치 설정 및 Hello 출력**
+
+![개발 환경 확인](images/06.png)
+
+**공개 샘플 저장소 clone 및 폴더 구조·로그 확인**
+
+![샘플 저장소 clone](images/07.png)
+
+</details>
+
+<details>
+<summary>프로그램 실행 화면</summary>
+
+**메뉴 출력 및 기능 선택**
+
+![메뉴 실행](images/01.png)
+
+</details>
+
+<details>
+<summary>코드 구조</summary>
+
+**카테고리 상수 및 프롬프트 데이터**
+
+![데이터 구조](images/02.png)
+
+**프롬프트 추가 기능 구현**
+
+![add_prompt 구현](images/03.png)
+
+</details>
+
+<details>
+<summary>Git 브랜치 작업</summary>
+
+**브랜치 생성, 커밋, main 병합 및 푸시**
+
+![브랜치 병합](images/04.png)
+
+</details>
+
+<details>
+<summary>README 미리보기</summary>
+
+![README 미리보기](images/05.png)
+
+</details>
