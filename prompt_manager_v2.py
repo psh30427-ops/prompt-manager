@@ -224,7 +224,53 @@ def show_menu():
 
 
 def add_prompt():
-    print("준비 중입니다.")
+    print("\n[프롬프트 추가]")
+
+    while True:
+        title = input("제목: ").strip()
+        if title:
+            break
+        print("제목은 비워둘 수 없습니다. 다시 입력해주세요.")
+
+    while True:
+        content = input("내용: ").strip()
+        if content:
+            break
+        print("내용은 비워둘 수 없습니다. 다시 입력해주세요.")
+
+    print("\n카테고리를 선택하세요.")
+    for i, name in enumerate(CATEGORIES, start=1):
+        print(f"{i}. {name}")
+    print(f"{len(CATEGORIES) + 1}. 직접 입력")
+
+    while True:
+        choice = input("번호 선택: ").strip()
+        if choice.isdigit():
+            num = int(choice)
+            if 1 <= num <= len(CATEGORIES):
+                category = CATEGORIES[num - 1]
+                break
+            if num == len(CATEGORIES) + 1:
+                while True:
+                    category = input("카테고리 직접 입력: ").strip()
+                    if category:
+                        break
+                    print("카테고리는 비워둘 수 없습니다. 다시 입력해주세요.")
+                break
+        print("잘못된 번호입니다. 다시 선택해주세요.")
+
+    new_id = prompts[-1]["id"] + 1 if prompts else 1
+
+    prompts.append({
+        "id": new_id,
+        "title": title,
+        "category": category,
+        "tags": [],
+        "favorite": False,
+        "content": content,
+    })
+
+    print(f"\n프롬프트가 추가되었습니다. (id: {new_id})")
 
 
 def show_list():
