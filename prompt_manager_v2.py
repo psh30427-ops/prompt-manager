@@ -1,4 +1,6 @@
 print("프롬프트 매니저 프로그램을 시작합니다.") 
+
+CATEGORIES = ["텍스트 생성", "이미지 생성", "영상 생성", "페르소나", "자동화", "기타"]
 prompts = [
     {
         "id": 1,
@@ -92,7 +94,7 @@ the video, clean and legible logo typography, no other text, no subtitles""",
     {
         "id": 2,
         "title": "KT 위즈 자동화 과제 - 핵심 프롬프트 모음",
-        "category": "업무 자동화",
+        "category": "자동화",
         "tags": ["Make", "Discord", "KBO", "자동화"],
         "favorite": False,
         "content": """1. 과제 요구사항 전달
@@ -177,7 +179,7 @@ the video, clean and legible logo typography, no other text, no subtitles""",
     {
         "id": 3,
         "title": "AI의 대학 교육 영향 및 미래 전망 보고서 작성",
-        "category": "보고서 작성",
+        "category": "텍스트 생성",
         "tags": ["AI", "교육", "보고서", "대학"],
         "favorite": False,
         "content": """너는 AI 전문가이자 보고서 작성 전문가다. AI가 대학교 학생들의 교육에 미치는 영향과 앞으로의 교육 행보를 예측하는 보고서를 작성해줘.
@@ -204,7 +206,7 @@ the video, clean and legible logo typography, no other text, no subtitles""",
     {
         "id": 4,
         "title": "라면 먹방 라이브 방송 영상/이미지 생성",
-        "category": "영상/이미지 생성",
+        "category": "영상 생성",
         "tags": ["먹방", "라면", "영상", "이미지"],
         "favorite": False,
         "content": """A high-quality video of a young adult South Korean male in his early 20s with short buzzed hair and sun-kissed skin, wearing a dark navy casual outfit. He is in his cozy bedroom with a wooden bookshelf in the background. He is performing a "Mukbang" (eating show) live stream. In front of him, there is a professional ring light and a camera setup on a desk. He holds chopsticks, lifting a large portion of steaming hot, curly ramen noodles from a white bowl to his open mouth, looking excited and happy. The camera slightly zooms in on his face and the noodles. Soft indoor lighting, illustrative/animated style, natural movements.""",
