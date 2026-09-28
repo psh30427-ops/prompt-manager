@@ -344,7 +344,31 @@ def search_prompt():
 
 
 def show_detail():
-    print("준비 중입니다.")
+    print("\n[프롬프트 상세 보기]")
+
+    if not prompts:
+        print("등록된 프롬프트가 없습니다.")
+        return
+
+    for i, p in enumerate(prompts, start=1):
+        print(f"{i}. {p['title']}")
+
+    while True:
+        choice = input("번호 선택: ").strip()
+        if choice.isdigit() and 1 <= int(choice) <= len(prompts):
+            target = prompts[int(choice) - 1]
+            break
+        print("잘못된 번호입니다. 다시 선택해주세요.")
+
+    star = "⭐" if target["favorite"] else "없음"
+
+    print("\n" + "=" * 40)
+    print(f"제목: {target['title']}")
+    print(f"카테고리: {target['category']}")
+    print(f"즐겨찾기: {star}")
+    print("-" * 40)
+    print(target["content"])
+    print("=" * 40)
 
 
 def toggle_favorite():
