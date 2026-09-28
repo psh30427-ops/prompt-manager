@@ -320,7 +320,27 @@ def show_by_category():
 
 
 def search_prompt():
-    print("준비 중입니다.")
+    print("\n[프롬프트 검색]")
+
+    while True:
+        keyword = input("검색어: ").strip()
+        if keyword:
+            break
+        print("검색어는 비워둘 수 없습니다. 다시 입력해주세요.")
+
+    found = []
+    for p in prompts:
+        if keyword.lower() in p["title"].lower() or keyword.lower() in p["content"].lower():
+            found.append(p)
+
+    if not found:
+        print(f"'{keyword}'에 대한 검색 결과가 없습니다.")
+        return
+
+    print(f"\n검색 결과: {len(found)}개")
+    for i, p in enumerate(found, start=1):
+        star = "⭐" if p["favorite"] else "  "
+        print(f"{i}. {star} {p['title']} [{p['category']}]")
 
 
 def show_detail():
