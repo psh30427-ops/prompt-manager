@@ -372,11 +372,42 @@ def show_detail():
 
 
 def toggle_favorite():
-    print("준비 중입니다.")
+    print("\n[즐겨찾기 관리]")
+
+    if not prompts:
+        print("등록된 프롬프트가 없습니다.")
+        return
+
+    for i, p in enumerate(prompts, start=1):
+        star = "⭐" if p["favorite"] else "  "
+        print(f"{i}. {star} {p['title']}")
+
+    while True:
+        choice = input("번호 선택: ").strip()
+        if choice.isdigit() and 1 <= int(choice) <= len(prompts):
+            target = prompts[int(choice) - 1]
+            break
+        print("잘못된 번호입니다. 다시 선택해주세요.")
+
+    target["favorite"] = not target["favorite"]
+
+    if target["favorite"]:
+        print(f"\n'{target['title']}'을(를) 즐겨찾기에 추가했습니다.")
+    else:
+        print(f"\n'{target['title']}'을(를) 즐겨찾기에서 해제했습니다.")
 
 
 def show_favorites():
-    print("준비 중입니다.")
+    print("\n[즐겨찾기 목록]")
+
+    found = [p for p in prompts if p["favorite"]]
+
+    if not found:
+        print("즐겨찾기한 프롬프트가 없습니다.")
+        return
+
+    for i, p in enumerate(found, start=1):
+        print(f"{i}. ⭐ {p['title']} [{p['category']}]")
 
 
 def main():
