@@ -228,6 +228,10 @@ $ python3 prompt_manager_v2.py
 
 ![즐겨찾기](images/13.png)
 
+**0번 종료**
+
+![종료](images/14.png)
+
 </details>
 
 <details>
