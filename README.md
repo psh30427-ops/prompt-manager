@@ -401,7 +401,7 @@ $ git push origin main
 
 ![브랜치 병합](images/04.png)
 
-**전체 커밋 기록 및 병합 그래프 (`git log --oneline --graph`)**
+**최신 커밋 기록 및 병합 그래프 (`git log --oneline --graph`, 충돌 해결 병합 `58e0712` 포함)**
 
 ![커밋 그래프](images/09.png)
 
