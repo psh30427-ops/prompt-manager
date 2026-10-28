@@ -220,6 +220,7 @@ def show_menu():
     print("5. 상세 보기")
     print("6. 즐겨찾기 관리")
     print("7. 즐겨찾기 목록")
+    print("8. 카테고리 수정")
     print("0. 종료")
 
 
@@ -410,6 +411,116 @@ def show_favorites():
         print(f"{i}. ⭐ {p['title']} [{p['category']}]")
 
 
+def choose_category():
+    for i, name in enumerate(CATEGORIES, start=1):
+        print(f"{i}. {name}")
+    print(f"{len(CATEGORIES) + 1}. 직접 입력")
+
+    while True:
+        choice = input("번호 선택: ").strip()
+        if choice.isdigit():
+            num = int(choice)
+            if 1 <= num <= len(CATEGORIES):
+                return CATEGORIES[num - 1]
+            if num == len(CATEGORIES) + 1:
+                while True:
+                    category = input("카테고리 직접 입력: ").strip()
+                    if category:
+                        return category
+                    print("카테고리는 비워둘 수 없습니다. 다시 입력해주세요.")
+        print("잘못된 번호입니다. 다시 선택해주세요.")
+
+
+def move_category():
+    print("\n[프롬프트 카테고리 이동]")
+
+    for i, p in enumerate(prompts, start=1):
+        print(f"{i}. {p['title']} [{p['category']}]")
+
+    while True:
+        choice = input("번호 선택: ").strip()
+        if choice.isdigit() and 1 <= int(choice) <= len(prompts):
+            target = prompts[int(choice) - 1]
+            break
+        print("잘못된 번호입니다. 다시 선택해주세요.")
+
+    print(f"\n현재 카테고리: {target['category']}")
+    print("이동할 카테고리를 선택하세요.")
+    new_category = choose_category()
+
+    if new_category == target["category"]:
+        print("\n현재와 같은 카테고리입니다. 변경하지 않았습니다.")
+        return
+
+    old_category = target["category"]
+    target["category"] = new_category
+    print(f"\n'{target['title']}'의 카테고리를 '{old_category}' → '{new_category}'(으)로 이동했습니다.")
+
+
+def rename_category():
+    print("\n[카테고리 이름 변경]")
+
+    used = []
+    for p in prompts:
+        if p["category"] not in used:
+            used.append(p["category"])
+
+    for i, name in enumerate(used, start=1):
+        print(f"{i}. {name}")
+
+    while True:
+        choice = input("번호 선택: ").strip()
+        if choice.isdigit() and 1 <= int(choice) <= len(used):
+            old_name = used[int(choice) - 1]
+            break
+        print("잘못된 번호입니다. 다시 선택해주세요.")
+
+    while True:
+        new_name = input("새 카테고리 이름: ").strip()
+        if new_name:
+            break
+        print("카테고리는 비워둘 수 없습니다. 다시 입력해주세요.")
+
+    if new_name == old_name:
+        print("\n기존 이름과 같습니다. 변경하지 않았습니다.")
+        return
+
+    count = 0
+    for p in prompts:
+        if p["category"] == old_name:
+            p["category"] = new_name
+            count += 1
+
+    if old_name in CATEGORIES:
+        if new_name in CATEGORIES:
+            CATEGORIES.remove(old_name)
+        else:
+            CATEGORIES[CATEGORIES.index(old_name)] = new_name
+
+    print(f"\n'{old_name}' → '{new_name}'(으)로 변경했습니다. (프롬프트 {count}개)")
+
+
+def edit_category():
+    print("\n[카테고리 수정]")
+
+    if not prompts:
+        print("등록된 프롬프트가 없습니다.")
+        return
+
+    print("1. 프롬프트 카테고리 이동")
+    print("2. 카테고리 이름 변경")
+
+    while True:
+        choice = input("번호 선택: ").strip()
+        if choice == "1":
+            move_category()
+            return
+        if choice == "2":
+            rename_category()
+            return
+        print("잘못된 번호입니다. 다시 선택해주세요.")
+
+
 def main():
     print("프롬프트 매니저 프로그램을 시작합니다.")
     while True:
@@ -429,6 +540,8 @@ def main():
             toggle_favorite()
         elif choice == "7":
             show_favorites()
+        elif choice == "8":
+            edit_category()
         elif choice == "0":
             print("프로그램을 종료합니다.")
             break
