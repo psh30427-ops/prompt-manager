@@ -79,6 +79,10 @@ python3 prompt_manager_v2.py
 
 ![개발 환경 확인](images/06.png)
 
+**Git 사용자 정보(user.name, user.email) 설정 및 확인**
+
+![Git 사용자 설정](images/08.png)
+
 **공개 샘플 저장소 clone 및 폴더 구조·로그 확인**
 
 ![샘플 저장소 clone](images/07.png)
