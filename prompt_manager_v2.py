@@ -220,6 +220,7 @@ def show_menu():
     print("5. 상세 보기")
     print("6. 즐겨찾기 관리")
     print("7. 즐겨찾기 목록")
+    print("-" * 20)
     print("0. 종료")
 
 
