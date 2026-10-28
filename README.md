@@ -405,6 +405,10 @@ $ git push origin main
 
 ![커밋 그래프](images/09.png)
 
+**이어서: 이전 커밋 기록 (카테고리별 조회 병합 `81a25b1`, KT 위즈 병합 `2afba4c` ~ 첫 커밋 `8fc4a64`)**
+
+![커밋 그래프 이어서](images/15.png)
+
 </details>
 
 <details>
