@@ -212,6 +212,22 @@ $ python3 prompt_manager_v2.py
 
 ![메뉴 실행](images/01.png)
 
+**1번 프롬프트 추가**
+
+![프롬프트 추가](images/10.png)
+
+**4번 프롬프트 검색**
+
+![프롬프트 검색](images/11.png)
+
+**5번 상세 보기**
+
+![상세 보기](images/12.png)
+
+**6번 즐겨찾기 등록 및 7번 즐겨찾기 목록**
+
+![즐겨찾기](images/13.png)
+
 </details>
 
 <details>
@@ -233,6 +249,10 @@ $ python3 prompt_manager_v2.py
 **브랜치 생성, 커밋, main 병합 및 푸시**
 
 ![브랜치 병합](images/04.png)
+
+**전체 커밋 기록 및 병합 그래프 (`git log --oneline --graph`)**
+
+![커밋 그래프](images/09.png)
 
 </details>
 
